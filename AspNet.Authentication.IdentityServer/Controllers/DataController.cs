@@ -25,8 +25,8 @@ namespace AspNet.Authentication.IdentityServer.Controllers
         {
             var accessToken = await HttpContext.Authentication.GetTokenAsync("access_token");
 
-            var introspectionClient = new IntrospectionClient("https://localhost:44388/connect/introspect", "MyAPI", "TopSecret");
-            //var introspectionClient = new IntrospectionClient("https://localhost:44388/connect/introspect", "MyAPI2", "TopSecret");
+            //var introspectionClient = new IntrospectionClient("https://localhost:44388/connect/introspect", "MyAPI", "TopSecret");
+            var introspectionClient = new IntrospectionClient("https://localhost:44388/connect/introspect", "MyAPI2", "TopSecret");
 
             var response = await introspectionClient.SendAsync(new IntrospectionRequest { Token = accessToken });
 

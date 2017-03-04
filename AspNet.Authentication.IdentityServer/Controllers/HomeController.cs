@@ -27,8 +27,8 @@ namespace AspNet.Authentication.IdentityServer.Controllers
         {
             var disco = await DiscoveryClient.GetAsync("https://localhost:44388");
             var tokenClient = new TokenClient(disco.TokenEndpoint, "MyClient", "TopSecretClientSecret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("MyAPI");
-            //var tokenResponse = await tokenClient.RequestClientCredentialsAsync("MyAPI2");
+            //var tokenResponse = await tokenClient.RequestClientCredentialsAsync("MyAPI");
+            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("MyAPI2");
 
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);

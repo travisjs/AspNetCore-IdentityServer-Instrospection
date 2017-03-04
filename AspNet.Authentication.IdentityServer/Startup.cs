@@ -52,11 +52,8 @@ namespace AspNet.Authentication.IdentityServer
             {
                 Authority = "https://localhost:44388",
                 RequireHttpsMetadata = false,
-                ApiName = "MyAPI",
-                //ApiName = "MyAPI2",
-                ApiSecret = "TopSecret",
-                AutomaticAuthenticate = true,
-                AutomaticChallenge = false
+                //ApiName = "MyAPI",
+                ApiName = "MyAPI2"
             });
 
             app.UseMvcWithDefaultRoute();
